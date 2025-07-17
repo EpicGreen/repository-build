@@ -2,6 +2,18 @@
 
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/default.env"
 
+if [ "$1" = '--buildall' ]; then
+    for product in "${!PRODUCTS[@]}"; do
+        echo "Building product: $product"
+        "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/build.sh" "$product" "${@:2}"
+        if [ $? -ne 0 ]; then
+            echo "Build failed for product: $product"
+            exit 1
+        fi
+    done
+    exit 0
+fi
+
 if ! { [ "$#" -eq 1 ] || ( [ "$#" -eq 2 ] && [ "$2" = '--rebuild' ] ); }; then
     echo "Usage: $0 <product-name>"
     echo "Available products: ${!PRODUCTS[@]}"
