@@ -48,10 +48,10 @@ REPO=${PRODUCTS[$PRODUCT]}
 DIST=$(grep -oP '^PLATFORM_ID="platform:?\K[^"]+' /etc/os-release)
 BUILD_DIR="$(mktemp -d)"
 
-cleanup() {
-    rm -rf "$BUILD_DIR"
-}
-trap cleanup EXIT
+# cleanup() {
+#     rm -rf "$BUILD_DIR"
+# }
+# trap cleanup EXIT
 
 LATEST_TAG=$(curl -s "https://api.github.com/repos/$REPO/tags" | grep -oP '"name": "\K(.*)(?=")' | head -n1)
 if [ -z "$LATEST_TAG" ]; then
