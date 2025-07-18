@@ -1,5 +1,5 @@
 Name:           bore
-Version:        0.6.0
+Version:        0.0.0
 Release:        1%{?dist}
 Summary:        Bore is a simple CLI tool for making tunnels to localhost.
 License:        MIT
