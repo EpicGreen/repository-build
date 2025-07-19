@@ -17,7 +17,7 @@ MinMon is an opinionated minimal monitoring and alarming tool for Linux. It focu
 %global debug_package %{nil}
 
 %prep
-%setup -q -n minmon-%{version} --strip-components=1
+%setup -q -n minmon-%{version}
 
 %build
 cargo build --release
