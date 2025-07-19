@@ -5,7 +5,7 @@ Summary:        Offline, privacy-first grammar checker. Fast, open-source, Rust-
 License:        Apache-2.0
 Group:          System Tools
 URL:            https://github.com/automattic/harper
-Source0:        https://github.com/Automattic/harper/releases/download/v%{version}/harper-cli-x86_64-unknown-linux-gnu.tar.gz#/harper-%{version}.tar.gz
+Source0:        https://github.com/Automattic/harper/releases/download/v%{version}/harper-%{version}.tar.gz
 BuildArch:      x86_64
 BuildRequires:  cargo
 BuildRequires:  gcc

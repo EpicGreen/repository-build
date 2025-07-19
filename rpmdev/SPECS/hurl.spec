@@ -5,7 +5,7 @@ Summary:        Hurl, run and test HTTP requests with plain text.
 License:        Apache-2.0
 Group:          Development Tools
 URL:            https://github.com/Orange-OpenSource/hurl
-Source0:        https://github.com/Orange-OpenSource/hurl/releases/download/v%{version}/hurl-v%{version}.tar.gz
+Source0:        https://github.com/Orange-OpenSource/hurl/releases/download/v%{version}/hurl-%{version}.tar.gz
 BuildArch:      x86_64
 BuildRequires:  cargo
 BuildRequires:  gcc
