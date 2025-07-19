@@ -47,6 +47,7 @@ PRODUCT=$1
 REPO=${PRODUCTS[$PRODUCT]}
 DIST=$(grep -oP '^PLATFORM_ID="platform:?\K[^"]+' /etc/os-release)
 BUILD_DIR="$(mktemp -d)"
+mkdir -p $BUILD_DIR/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
 
 cleanup() {
     rm -rf "$BUILD_DIR"
@@ -80,8 +81,6 @@ if [ "$(printf '%s\n' "$CURRENT_VERSION" "$VERSION" | sort -V | head -n1)" = "$V
     echo "Version $CURRENT_VERSION is greater or equal to ${VERSION}"
     exit 0
 fi
-
-mkdir -p $BUILD_DIR/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
 
 RELEASE=$(grep -m1 '^Release:' "SPECS/$PRODUCT.spec" | awk '{print $2}' | sed 's/%{?dist}//')
 ARCH=$(grep -m1 '^BuildArch:' "SPECS/$PRODUCT.spec" | awk '{print $2}')
