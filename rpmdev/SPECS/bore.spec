@@ -16,7 +16,7 @@ Bore is a modern, simple TCP tunnel in Rust that exposes local ports to a remote
 %global debug_package %{nil}
 
 %prep
-%setup -q -c
+%setup -q -n bore-%{version} --strip-components=1
 
 %build
 cargo build --release

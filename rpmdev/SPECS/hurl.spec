@@ -16,7 +16,7 @@ Hurl, run and test HTTP requests with plain text.
 %global debug_package %{nil}
 
 %prep
-%setup -q -c
+%setup -q -n hurl-%{version} --strip-components=1
 
 %build
 cargo build --release

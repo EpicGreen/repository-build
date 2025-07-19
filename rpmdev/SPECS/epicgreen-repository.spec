@@ -15,7 +15,7 @@ EpicGreen DNF Repository configuration
 %global debug_package %{nil}
 
 %prep
-%setup -q -n epicgreen-repository
+%setup -q -n epicgreen-repository-%{version} --strip-components=1
 
 %build
 #Nothing to build
