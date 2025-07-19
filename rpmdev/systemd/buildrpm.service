@@ -4,4 +4,5 @@ Description=Build all new listed releases into RPM packages
 [Service]
 Type=simple
 Nice=10
+Environment=HOME=/root/
 ExecStart=/usr/bin/rpmdevbuildall.sh --buildall
