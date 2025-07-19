@@ -63,7 +63,8 @@ echo "Latest release tag: $LATEST_TAG"
 VERSION="${LATEST_TAG#v}"
 
 SOURCE_TARBALL=$(curl -s "https://api.github.com/repos/$REPO/tags" | grep -oP '"tarball_url": "\K(.*)(?=")' | head -n1)
-curl -L -o "$BUILD_DIR/SOURCES/${PRODUCT}-v${VERSION}.tar.gz" "$SOURCE_TARBALL"
+echo "Downloading source tarball from: $SOURCE_TARBALL" to "$BUILD_DIR/SOURCES/${PRODUCT}-${VERSION}.tar.gz"
+curl -L -o "$BUILD_DIR/SOURCES/${PRODUCT}-${VERSION}.tar.gz" "$SOURCE_TARBALL"
 if [ $? -eq 0 ]; then
     echo "Source download successfull."
 else
