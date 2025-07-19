@@ -16,7 +16,7 @@ Hurl, run and test HTTP requests with plain text.
 %global debug_package %{nil}
 
 %prep
-%setup -q -n harper-%{version}
+%setup -n harper-%{version}
 
 %build
 rustup run nightly cargo build --release
